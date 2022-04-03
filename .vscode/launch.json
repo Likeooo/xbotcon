@@ -24,4 +24,4 @@
             "miDebuggerPath": "/usr/bin/gdb"                   // 调试gdb路径
         }
     ]
-}
+}   

@@ -1,0 +1,44 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g","-std=c++11", 
+                "${file}",                            // 单个cpp文件
+                //"${workspaceFolder}/Demo/*.cpp",        // 多个cpp文件
+               //"${workspaceFolder}/src/*.cpp",
+                "-o", 
+                "${fileDirname}/${fileBasenameNoExtension}",  // 要调试的程序，必须与launch.json文件中的"program"相同
+                "-I", "${workspaceFolder}/include",     // 项目include文件
+                "-I", "$/usr/include/opencv4",          // opencv安装的include文件路径
+                "-I", "$/usr/include/opencv4/opencv2",  
+                "-L", "$/usr/local/lib",                //opencv安装的lib文件路径
+                "-l", "opencv_core",                    //.so文件，文件原名称“libopencv_core.so”,注意需去除“lib”
+                "-l", "opencv_imgproc",
+                "-l", "opencv_imgcodecs",
+                "-l", "opencv_video",
+                "-l", "opencv_ml",
+                "-l", "opencv_highgui",
+                "-l", "opencv_objdetect",
+                "-l", "opencv_flann",
+                "-l", "opencv_imgcodecs",
+                "-l", "opencv_photo",
+                "-l", "opencv_videoio",    
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "调试器生成任务"
+        }
+    ],
+    "version": "2.0.0"
+}
