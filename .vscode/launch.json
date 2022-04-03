@@ -1,0 +1,27 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "name": "g++.exe - 生成和调试活动文件",
+            "type": "cppdbg",                                 // 只能是cppdbg
+            "request": "launch",                              // launch：启动，attach：附加
+            "program": "${fileDirname}/${fileBasenameNoExtension}",   // 需要调试的程序
+            "args": [],                                       // 调试时传递给程序的参数
+            "stopAtEntry": false,                             // 调试时是否停在程序入口：{true：是，false：否}
+            "cwd": "${workspaceFolder}",                      // 工作目录
+            "environment": [],                                // 额外的环境变量
+            "externalConsole": false,                         // true：输出到外部终端；false：只输出到软件终端（有显示不全的可能）
+            "MIMode": "gdb",
+            "setupCommands": [      // 暂时不知道作用
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ build active file",   // 预编译任务名称，和tasks.json中的label必须相同
+            "miDebuggerPath": "/usr/bin/gdb"                   // 调试gdb路径
+        }
+    ]
+}
